@@ -11,7 +11,8 @@ The source of data for this project is a publicly available open API for IBM sto
 - AWS Glue
 - AWS S3
 - PowerBI (https://powerbi.microsoft.com/en-us/downloads/)
-- 
+### Project Steps: 
+- The first step is to create an AWS account if you do not have one. 
   
 
 
