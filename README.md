@@ -191,6 +191,15 @@ queryStart = client.start_query_execution(
 print(queryStart)
 
 ~~~
+- Click run
+- Our job has now run and we can go back to athena to check the new table created with the modifications
+
+~~~
+SELECT * FROM "kevdatabase"."stocks_analysis" limit 10;
+
+<img width="892" alt="Screenshot 2024-05-28 at 5 41 49 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/bded9c5d-5b39-47ca-a68e-bf65021f3012">
+
+~~~
 
 
 
