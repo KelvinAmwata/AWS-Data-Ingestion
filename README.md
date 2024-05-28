@@ -101,6 +101,15 @@ def lambda_handler(event, context):
         print("Time series data not found in the response.")
 
   ~~~
-  
+## Crawling the Data
+- After lambda has ingested the data and pushed it to data firehose which then pushes it to an S3 bucket, we want to crawl the data so that we can create a schema and a table which are important when writing a query.
+- Search for AWS glue on the search bar.
+- On the left side, look for crawler under data catalog:
+
+<img width="261" alt="Screenshot 2024-05-28 at 3 44 00 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/064b9f6d-e9ac-4ec3-bc48-436c124bfe53">
+
+- Choose the s3 bucket name you created as a data source. Sometimes you may see an error after browing the name of your bucket. In such a case, ensure you put a forward slash(/) after the name for it to work
+
+<img width="609" alt="Screenshot 2024-05-28 at 3 50 05 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/1c39f266-d037-4a0a-83a5-9d713fdb91e0">
 
 
