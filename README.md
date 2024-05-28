@@ -3,8 +3,15 @@ The AWS-Data-ingestion project is about building a data pipeline in the AWS clou
 ## Data Sources 
 
 The source of data for this project is a publicly available open API for IBM stocks. API link: https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=demo
-### Tools 
-- AWS account
+### Tools,Services, and Software
+- AWS Account
+- AWS Lambda
+- AWS Firehose
+- AWS Athena
+- AWS Glue
+- AWS S3
+- PowerBI[Download here](https://powerbi.microsoft.com/en-us/downloads/)
 - 
+  
 
 
