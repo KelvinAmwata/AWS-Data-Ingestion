@@ -52,8 +52,11 @@ The source of data for this project is a publicly available open API for IBM sto
 - For the service role, we want to ensure that Firehose has permissions to interact with s3 and lambda. So we create a role which firehose assumes. We attach permissions to the role so that firehose can be able to push data to s3 
 - Click on the role created, and then click on add permissions
 <img width="1078" alt="Screenshot 2024-05-28 at 3 33 20 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/7e35f66d-0d93-481c-9dff-7c72df1dd0fa">
+
 - Click on attach policies 
+
 <img width="229" alt="Screenshot 2024-05-28 at 3 34 02 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/d650ed5b-e700-44f5-9817-d9f54d507e76">
+
 
 - Select s3 full access policy and AWS Lambda Full Access 
 
