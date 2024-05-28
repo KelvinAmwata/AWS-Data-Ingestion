@@ -10,7 +10,7 @@ The source of data for this project is a publicly available open API for IBM sto
 - AWS Athena
 - AWS Glue
 - AWS S3
-- PowerBI [Download here](https://powerbi.microsoft.com/en-us/downloads/)
+- PowerBI (https://powerbi.microsoft.com/en-us/downloads/)
 - 
   
 
