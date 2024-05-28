@@ -17,7 +17,7 @@ The source of data for this project is a publicly available open API for IBM sto
 - The first step is to create an AWS account if you do not have one, please follow the steps highlighted here: [https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html]
 - Create a firehose stream to which Lambda will ingest the data
 - Write a code to ingest the data
-  ~~~
+  ~~~ python 
 import boto3
 import json 
 import urllib3
