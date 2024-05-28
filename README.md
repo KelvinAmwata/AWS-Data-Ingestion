@@ -144,7 +144,7 @@ def lambda_handler(event, context):
 
 <img width="906" alt="Screenshot 2024-05-28 at 5 05 21 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/a1c8c5af-0d24-46df-95a2-809e84fa860d">
 
-  ~~~
+
 ## Transforming the Data
 - One of the important things when creating a data pipeline is to transform the data
 - We can achieve this by creating an ETL job.
@@ -154,6 +154,9 @@ def lambda_handler(event, context):
 <img width="739" alt="Screenshot 2024-05-28 at 5 24 10 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/d374f438-4497-498a-a9a1-1c759537e226">
 
 - We will write our code in SQL but then use a Python "wrapper" that will allow AWS Glue to submit our queries to Athena
+
+
+
 ~~~
 import boto3
 
@@ -186,6 +189,7 @@ queryStart = client.start_query_execution(
 )
 
 print(queryStart)
+
 ~~~
 
 
