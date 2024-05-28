@@ -18,7 +18,8 @@ The source of data for this project is a publicly available open API for IBM sto
 ## Create an S3 Bucket 
 - We create an S3 bucket where our data will be stored.
 <img width="915" alt="Screenshot 2024-05-28 at 2 33 02 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/9a9f1084-9afe-44c3-ba8b-694f70f64068">
-  - Ensure block all public access option is enabled 
+
+- Ensure block all public access option is enabled 
 
 <img width="961" alt="Screenshot 2024-05-28 at 2 31 20 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/321c155b-f8eb-4acd-8cc9-5abc1b87f8af">
 
@@ -27,7 +28,7 @@ The source of data for this project is a publicly available open API for IBM sto
 <img width="576" alt="Screenshot 2024-05-28 at 2 35 14 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/61e9a206-1cdc-4e37-9f63-c3d98ae34c4e">
 
 - For advanced settings, do no enable object lock. That will mean that you can not alter objects in the bucket
-- 
+  
 <img width="591" alt="Screenshot 2024-05-28 at 2 36 11 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/ce49d887-1b82-4c68-a39e-8eb8ac82fc64">
 
 
