@@ -35,8 +35,27 @@ The source of data for this project is a publicly available open API for IBM sto
 
 
 ## Create a firehose stream to which Lambda will ingest the data
-- In your AWS account, search Amazon data firehose {https://us-east-1.console.aws.amazon.com/firehose/home?region=us-east-1#/streams}
-- 
+- In your AWS account search bar, search Amazon data firehose:
+
+<img width="1073" alt="Screenshot 2024-05-28 at 2 49 08 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/5a7935c1-d019-42c1-9720-4328e8048740">
+- Click on create firehose stream and then select the direct put option. We want Lambda to put data directly to the firehose
+<img width="655" alt="Screenshot 2024-05-28 at 2 51 43 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/0a3a247a-386c-4468-9987-5e95add97d9d">
+- You will see a stream name of the firehose, copy it and save it on your clipboard. we will need this name when writing our lambda code
+
+- Under destination settings, for the s3 bucket, you can browse the name of the S3 bucket you created when creating an S3 bucket
+<img width="960" alt="Screenshot 2024-05-28 at 3 02 58 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/a54be720-aa9f-442f-b4d6-404e3e945a6f">
+
+- For the buffer hints, we can leave the buffer size as 5 MiB and buffer interval as 60 seconds. This means that firehose will be ingesting data from lambda at an interval of 60 seconds and the data ingested is 5 MiB in that interval 
+
+<img width="930" alt="Screenshot 2024-05-28 at 3 05 07 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/0ca4c769-4c0b-45ed-9e91-8ec9f4c83d15">
+- The other options can be left as they are apart from the service role. 
+- For the service role, we want to ensure that Firehose has permissions to interact with s3 and lambda. So we create a role which firehose assumes. We attach permissions to the role so that firehose can be able to push data to s3 
+- Click on the role created, and then click on add permissions
+<img width="1078" alt="Screenshot 2024-05-28 at 3 33 20 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/7e35f66d-0d93-481c-9dff-7c72df1dd0fa">
+- Click on attach policies 
+<img width="229" alt="Screenshot 2024-05-28 at 3 34 02 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/d650ed5b-e700-44f5-9817-d9f54d507e76">
+- Select s3 full access policy and AWS Lambda Full Access 
+
 ## Write a code to ingest the data(Lambda - FAAS)
   ~~~ python 
 
