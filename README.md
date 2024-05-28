@@ -201,6 +201,13 @@ SELECT * FROM "kevdatabase"."stocks_analysis" limit 10;
 
 ~~~
 
+# Visualizing the Data 
+
+- Having extracted the data, the next thing is to visualize it for business needs
+- For this project, we use PowerBI which is a widely used business intelligence tool
+- To connect PowerBI to Athena, you can watch this video to get the steps:
+- [https://www.youtube.com/watch?v=ClBQ3_p7T_A]
+-  [https://www.youtube.com/watch?v=FKdCr6vmq-o&t=326s] 
 
 
 
