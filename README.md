@@ -16,7 +16,43 @@ The source of data for this project is a publicly available open API for IBM sto
 ## Creating an AWS Account 
 - The first step is to create an AWS account if you do not have one, please follow the steps highlighted here: [https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html]
 - Create a firehose stream to which Lambda will ingest the data
-- 
+- Write a code to ingest the data
+  ~~~
+import boto3
+import json 
+import urllib3
+
+def lambda_handler(event, context):
+    http = urllib3.PoolManager()
+    
+    response = http.request("GET", "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=demo")
+    
+    response_dict = json.loads(response.data.decode(encoding="utf-8", errors="strict"))
+    
+    time_series = response_dict.get("Time Series (5min)")
+    
+    if time_series:
+        for timestamp, data in time_series.items():
+            processed_dict = {}
+            processed_dict["time"] = timestamp  # Add timestamp to processed dictionary
+            processed_dict["open"] = data.get("1. open")
+            processed_dict["high"] = data.get("2. high")
+            processed_dict["low"] = data.get("3. low")
+            processed_dict["close"] = data.get("4. close")
+            processed_dict["volume"] = data.get("5. volume")
+            
+            msg = json.dumps(processed_dict) + '\n'  # Convert dictionary to JSON string
+            
+            fh = boto3.client('firehose')
+            
+            reply = fh.put_record(
+                DeliveryStreamName="PUT-S3-5FVQo",
+                Record = {'Data': msg }
+            )
+    else:
+        print("Time series data not found in the response.")
+
+  ~~~
   
 
 
