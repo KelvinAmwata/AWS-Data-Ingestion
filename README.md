@@ -15,8 +15,14 @@ The source of data for this project is a publicly available open API for IBM sto
 # Project Steps: 
 ## Creating an AWS Account 
 - The first step is to create an AWS account if you do not have one, please follow the steps highlighted here: [https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html]
+## Create an S3 Bucket 
+- We create an S3 bucket where 
+
+<img width="961" alt="Screenshot 2024-05-28 at 2 31 20 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/321c155b-f8eb-4acd-8cc9-5abc1b87f8af">
+
+
 ## Create a firehose stream to which Lambda will ingest the data
-- On AWS account, search Amazon data firehose {https://us-east-1.console.aws.amazon.com/firehose/home?region=us-east-1#/streams}
+- In your AWS account, search Amazon data firehose {https://us-east-1.console.aws.amazon.com/firehose/home?region=us-east-1#/streams}
 - 
 ## Write a code to ingest the data(Lambda - FAAS)
   ~~~ python 
