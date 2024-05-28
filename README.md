@@ -18,6 +18,7 @@ The source of data for this project is a publicly available open API for IBM sto
 - Create a firehose stream to which Lambda will ingest the data
 - Write a code to ingest the data
   ~~~ python 
+
 import boto3
 import json 
 import urllib3
