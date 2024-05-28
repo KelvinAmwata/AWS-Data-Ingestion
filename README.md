@@ -207,7 +207,7 @@ SELECT * FROM "kevdatabase"."stocks_analysis" limit 10;
 - For this project, we use PowerBI which is a widely used business intelligence tool
 - To connect PowerBI to Athena, you can watch this video to get the steps:
   - Step 1: [https://www.youtube.com/watch?v=ClBQ3_p7T_A]
-  - Step 2: [https://www.youtube.com/watch?v=FKdCr6vmq-o&t=326s] 
-~~~
-<img width="694" alt="Screenshot 2024-05-28 at 5 48 52 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/7d60a52c-f0f3-4626-8247-830ffbfd77fc">
-~~~
+  - Step 2: [https://www.youtube.com/watch?v=FKdCr6vmq-o&t=326s]
+    
+## Conclusion 
+- In this pproject I was able to utilize AWS services to build an end to end data pipeline in which data is ingested using lambda and then inested to firehose which then stores the data in an s3 bucket.
