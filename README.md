@@ -101,6 +101,15 @@ def lambda_handler(event, context):
         print("Time series data not found in the response.")
 
   ~~~
+## Setting up Athena 
+
+-AWS athena is an AWS service that enables users to query data stored in S3. 
+- After Kinesis firehose pushes the data into an S3 bucket, the next step is to query the data using Athena so that the data can be ready for visualizations and other business needs
+- Search for Athena on the seach bar.
+- Click on settings, and then click on manage settings. Here we want to set the location where we will store the results of our queries.  So open a duplicate and go back to S3 and create another bucket. Remember to adhere to s3 naming conventions
+- Now we create the database. On the query editor,  enter DDL: CREATE DATABASE databasename. Replace databasename with the name you want for your database
+-  We now have athena set up and we are ready to crawl the data
+-  
 ## Crawling the Data
 - After lambda has ingested the data and pushed it to data firehose which then pushes it to an S3 bucket, we want to crawl the data so that we can create a schema and a table which are important when writing a query.
 - Search for AWS glue on the search bar.
@@ -108,8 +117,33 @@ def lambda_handler(event, context):
 
 <img width="261" alt="Screenshot 2024-05-28 at 3 44 00 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/064b9f6d-e9ac-4ec3-bc48-436c124bfe53">
 
-- Choose the s3 bucket name you created as a data source. Sometimes you may see an error after browing the name of your bucket. In such a case, ensure you put a forward slash(/) after the name for it to work
+- Click data source and under s3 path, select the s3 bucket name you created as a data source. Sometimes you may see an error after browing the name of your bucket. In such a case, ensure you put a forward slash(/) after the name for it to work. You can also press escape key. Either of those options will work
 
 <img width="609" alt="Screenshot 2024-05-28 at 3 50 05 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/1c39f266-d037-4a0a-83a5-9d713fdb91e0">
+
+- We've now created our crawler and all that it needs for it  to crawl the S3 bucket is to grant it permissions via a role.
+- Under configuration, click create IAM role 
+<img width="786" alt="Screenshot 2024-05-28 at 4 05 57 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/0405dc0f-a89f-40fc-be00-189fee0d9361">
+- We then select the database name we created when setting up athena. You can give the prefix of the table you want the crawler to create after it has crawled the data:
+  
+- <img width="828" alt="Screenshot 2024-05-28 at 4 44 46 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/98b87f2d-5a1b-43e8-a4db-5cbf8b041d19">
+
+- Our crawler is now all set and we click review and update
+- Click run crawler and it will take a few seconds to complete:
+  
+<img width="1049" alt="Screenshot 2024-05-28 at 4 54 53 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/78f3f2e5-e71b-4e56-bb5e-bbf17353d843">
+
+  ## Results
+- Switch back to athena to query data
+- Select the database we created
+- The crawler must have already created a table. If you cannot see it, click the refresh button. If you cannot still see it, go back to the I AM role assigned to the crawler and ensure that it has all the necessary permissions: Athena Full Access and S3 full access
+- Click on the table and select preview table:
+- Athena automatically creates a query which you can run to see the results of the output
+  ~~~
+  SELECT * FROM "kevdatabase"."kevstocks_project_fh" limit 100;
+  ~~~
+
+
+
 
 
