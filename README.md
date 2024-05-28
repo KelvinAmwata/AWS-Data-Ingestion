@@ -12,7 +12,7 @@ The source of data for this project is a publicly available open API for IBM sto
 - AWS S3
 - PowerBI (https://powerbi.microsoft.com/en-us/downloads/)
 ### Project Steps: 
-- The first step is to create an AWS account if you do not have one. 
+- The first step is to create an AWS account if you do not have one, please follow the steps highlighted you: [https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html] 
   
 
 
