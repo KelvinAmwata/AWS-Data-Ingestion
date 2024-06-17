@@ -109,7 +109,6 @@ def lambda_handler(event, context):
 - Click on settings, and then click on manage settings. Here we want to set the location where we will store the results of our queries.  So open a duplicate and go back to S3 and create another bucket. Remember to adhere to s3 naming conventions
 - Now we create the database. On the query editor,  enter DDL: CREATE DATABASE databasename. Replace databasename with the name you want for your database
 -  We now have athena set up and we are ready to crawl the data
--  
 ## Crawling the Data
 - After lambda has ingested the data and pushed it to data firehose which then pushes it to an S3 bucket, we want to crawl the data so that we can create a schema and a table which are important when writing a query.
 - Search for AWS glue on the search bar.
