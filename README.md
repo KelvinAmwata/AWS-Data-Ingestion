@@ -121,8 +121,10 @@ def lambda_handler(event, context):
 <img width="609" alt="Screenshot 2024-05-28 at 3 50 05 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/1c39f266-d037-4a0a-83a5-9d713fdb91e0">
 
 - We've now created our crawler and all that it needs for it  to crawl the S3 bucket is to grant it permissions via a role.
-- Under configuration, click create IAM role 
+- Under configuration, click create IAM role
+
 <img width="786" alt="Screenshot 2024-05-28 at 4 05 57 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/0405dc0f-a89f-40fc-be00-189fee0d9361">
+
 - We then select the database name we created when setting up athena. You can give the prefix of the table you want the crawler to create after it has crawled the data:
   
 - <img width="828" alt="Screenshot 2024-05-28 at 4 44 46 PM" src="https://github.com/KelvinAmwata/AWS-Data-Ingestion/assets/83902270/98b87f2d-5a1b-43e8-a4db-5cbf8b041d19">
