@@ -211,4 +211,4 @@ SELECT * FROM "kevdatabase"."stocks_analysis" limit 10;
   - Step 2: [https://www.youtube.com/watch?v=FKdCr6vmq-o&t=326s]
     
 ## Conclusion 
-- In this pproject I was able to utilize AWS services to build an end to end data pipeline in which data is ingested using lambda and then inested to firehose which then stores the data in an s3 bucket.
+- In this project I was able to utilize AWS services to build an end to end data pipeline in which data is ingested using lambda and then inested to firehose which then stores the data in an s3 bucket.
